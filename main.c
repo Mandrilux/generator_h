@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:48:51 2016
-** Last update Mon May 16 11:18:43 2016 
+** Last update Mon May 16 11:37:25 2016 
 */
 
 #include "gen.h"
@@ -46,7 +46,10 @@ int    display_directory(DIR **rep)
 	  if (strlen(ent->d_name) > 2)
 	    {
 	      if (strcmp(&(ent->d_name[strlen(ent->d_name) - 2]), TYPE_F) == 0)
-		printf("%s\n", ent->d_name);
+		{
+		  printf("%s\n", ent->d_name);
+		  read_file(ent->d_name);
+		}
 	    }
 	}
       closedir(*rep);
