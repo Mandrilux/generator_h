@@ -1,11 +1,11 @@
 /*
-1;2802;0c** read.c for  in /home/baptiste/project/generator_h
+** read.c for  in /home/baptiste/project/generator_h
 **
 ** Made by
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Mon May 16 13:26:44 2016 
+** Last update Mon May 16 12:38:56 2016 Exam User
 */
 
 #include "gen.h"
@@ -84,6 +84,12 @@ int	check_not_key_word(char *str)
   else if (strstr(str, "default") != NULL)
     flag++;
   else if (strstr(str, "break") != NULL)
+    flag++;
+  else if (strstr(str, "define") != NULL)
+    flag++;
+  else if(strstr(str, "struct") != NULL)
+    flag++;
+  else if(strstr(str, "typedef") != NULL)
     flag++;
   else
     flag = flag + 0;

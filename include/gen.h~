@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:50:03 2016
-** Last update Mon May 16 12:39:56 2016 Exam User
+** Last update Mon May 16 13:44:00 2016 
 */
 
 #ifndef GEN_H_
@@ -26,7 +26,6 @@
 typedef struct  s_core
 {
   char		*name_prog;
-  char		**re_write;
 }               t_core;
 
 char		*strdup(const char *s);

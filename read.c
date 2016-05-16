@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Mon May 16 13:45:03 2016 
+** Last update Mon May 16 14:49:59 2016 
 */
 
 #include "gen.h"
@@ -34,4 +34,24 @@ int     read_file(char *file)
     }
   printf("\n");
   return (1);
+}
+
+int	read_h(char *file)
+{
+  int	fd;
+  char	*str, *tmp;
+
+  if ((fd = open(file, O_RDONLY)) == -1)
+    return (-1);
+  while ((str = get_next_line(fd)) != NULL)
+    {
+      tmp = rostring(str);
+      if (check_is_proto(tmp) == -1)
+	{
+	  printf("on garde\n");
+	}
+    }
+  printf("\n");
+  return (1);
+
 }
