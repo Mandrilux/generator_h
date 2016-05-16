@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:50:03 2016
-** Last update Mon May 16 11:05:38 2016 
+** Last update Mon May 16 11:18:22 2016 
 */
 
 #ifndef GEN_H_
@@ -15,6 +15,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
+
+#define	TYPE_F ".c"
 
 typedef struct  s_core
 {
@@ -29,6 +31,7 @@ char		*init_str_2(char *str);
 		/* main.c */
 
 int		directory_open(t_core *core, DIR **rep);
+int		display_directory(DIR **rep);
 
 		/* init.c */
 
