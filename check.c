@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Mon May 16 12:59:29 2016 
+** Last update Mon May 16 13:10:56 2016 
 */
 
 #include "gen.h"
@@ -18,7 +18,14 @@ int	check_is_proto(char *str)
   if (str[strlen(str) - 1] == ')')
     {
       if (is_no_op(str) != -1)
-	return (1);
+	{
+	  if (check_not_key_word(str) == 0)
+	    return (1);
+	  else
+	    return (-1);
+	}
+      else
+	return (-1);
     }
   else
     return (-1);
@@ -56,4 +63,29 @@ int	is_no_op(char *str)
 	return (-1);
     }
   return (1);
+}
+
+int	check_not_key_word(char *str)
+{
+  int	flag = 0;
+
+  if (strstr(str,"while") != NULL)
+    flag++;
+  else if (strstr(str,"if") != NULL)
+    flag++;
+  else if (strstr(str,"else") != NULL)
+    flag++;
+  else if (strstr(str,"else if") != NULL)
+    flag++;
+  else if (strstr(str,"for") != NULL)
+    flag++;
+  else if (strstr(str, "case") != NULL)
+    flag++;
+  else if (strstr(str, "default") != NULL)
+    flag++;
+  else if (strstr(str, "break") != NULL)
+    flag++;
+  else
+    flag = flag + 0;
+  return (flag);
 }

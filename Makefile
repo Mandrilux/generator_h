@@ -5,7 +5,7 @@
 ## Login   <baptiste@epitech.net>
 ## 
 ## Started on  Wed May 11 17:39:05 2016 
-## Last update Mon May 16 12:54:12 2016 
+## Last update Mon May 16 13:20:50 2016 
 ##
 
 
@@ -16,7 +16,9 @@ SRC	=	main.c \
 		init.c \
 		read.c \
 		get_line.c \
-		check.c
+		check.c \
+		str.c \
+		strtoword.c
 
 INC_DIR	=	include
 
