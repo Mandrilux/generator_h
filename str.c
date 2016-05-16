@@ -1,11 +1,11 @@
 /*
-1;2802;0c1;2802;0c** str.c for  in /home/baptiste/project/generator_h
+** str.c for  in /home/baptiste/project/generator_h
 **
 ** Made by
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 13:11:00 2016
-** Last update Mon May 16 13:33:44 2016 
+** Last update Mon May 16 13:39:59 2016 
 */
 
 #include "gen.h"
@@ -36,5 +36,17 @@ char	*format_str(char *str)
   strcat(tmp, &(str[len_tmp]));
   strcat(tmp, ";");
   free(str);
+  return (tmp);
+}
+
+char	*get_name_file(char *name)
+{
+  char	*tmp;
+  int	len;
+
+  len = strlen(name);
+  if ((tmp = malloc(sizeof(char) * (len + 10))) == NULL)
+    return (NULL);
+  memset(tmp, '\0', len + 10);
   return (tmp);
 }

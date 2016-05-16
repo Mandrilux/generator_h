@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 13:20:59 2016
-** Last update Mon May 16 13:21:27 2016 
+** Last update Mon May 16 13:35:54 2016 
 */
 
 #include "gen.h"
@@ -36,7 +36,7 @@ int	wordlen(char *str, char decoup)
   return (i);
 }
 
-char*	complete_line(char *str, int nb, char decoup)
+char	*complete_line(char *str, int nb, char decoup)
 {
   char	*new;
   int	len;
