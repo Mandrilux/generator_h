@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 13:11:00 2016
-** Last update Mon May 16 13:39:59 2016 
+** Last update Mon May 16 13:43:09 2016 
 */
 
 #include "gen.h"
@@ -48,5 +48,9 @@ char	*get_name_file(char *name)
   if ((tmp = malloc(sizeof(char) * (len + 10))) == NULL)
     return (NULL);
   memset(tmp, '\0', len + 10);
+  strcat(tmp, "\t\t");
+  strcat(tmp, "/* ");
+  strcat(tmp, name);
+  strcat(tmp, " */");
   return (tmp);
 }
