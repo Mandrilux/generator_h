@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 13:11:00 2016
-** Last update Mon May 16 13:43:09 2016 
+** Last update Mon May 16 20:58:30 2016 
 */
 
 #include "gen.h"
@@ -52,5 +52,46 @@ char	*get_name_file(char *name)
   strcat(tmp, "/* ");
   strcat(tmp, name);
   strcat(tmp, " */");
+  return (tmp);
+}
+
+int     alloc(t_core *core, char *name)
+{
+  int   i;
+  char  **tmp;
+
+  i = -1;
+  if (core->re_write == NULL)
+    {
+      if ((core->re_write = malloc(sizeof(char *) * 2)) == NULL)
+	return (-1);
+      core->re_write[0] = strdup(name);
+      core->re_write[1] = NULL;
+    }
+  else
+    {
+      if ((tmp = malloc(sizeof(char *) *
+			(count_tab(core->re_write) + 2))) == NULL)
+	return (-1);
+      while (core->re_write[++i] != NULL)
+	tmp[i] = core->re_write[i];
+      tmp[i] = strdup(name);
+      tmp[i + 1] = NULL;
+      core->re_write = tmp;
+    }
+  return (1);
+}
+
+char	*add_include(char *str)
+{
+  char	*tmp;
+
+  if (strstr(str, "include") != NULL)
+    return (str);
+  if ((tmp = malloc(sizeof(char) * (strlen(str) + strlen("include/") + 1))) == NULL)
+    return (NULL);
+  memset(tmp, '\0', strlen(str) + strlen("include/") + 1);
+  strcat(tmp, "include/");
+  strcat(tmp, str);
   return (tmp);
 }

@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Mon May 16 12:38:56 2016 Exam User
+** Last update Mon May 16 20:48:31 2016 
 */
 
 #include "gen.h"
@@ -35,6 +35,7 @@ int     check_parenthesis(char *str)
 {
   int   i;
   int   nb_o;
+
   int   nb_c;
 
   nb_o = 0;
@@ -104,3 +105,24 @@ int     count_tab(char **tab)
   while (tab[++i] != NULL);
   return (i);
 }
+
+/* int	last_line_ok(char **tab) */
+/* { */
+/*   int	len = count_tab(tab); */
+/*   int	tmp = len; */
+/*   int	i = -1; */
+/*   while (len - 1 > 0) */
+/*     { */
+/*       if (strstr(tab[len - 1], "endif") == NULL) */
+/* 	{ */
+/* 	  while (tab[len - 1][++i] != '\0') */
+/* 	    { */
+/* 	      if (tab[len - 1][i] != ' ') */
+/* 		return (len); */
+/* 	    } */
+/* 	} */
+/*       i = -1; */
+/*       len--; */
+/*     } */
+/*   return (0); */
+/* } */

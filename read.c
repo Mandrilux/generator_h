@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Mon May 16 14:49:59 2016 
+** Last update Mon May 16 20:32:01 2016 
 */
 
 #include "gen.h"
@@ -36,7 +36,7 @@ int     read_file(char *file)
   return (1);
 }
 
-int	read_h(char *file)
+int	read_h(t_core *core, char *file)
 {
   int	fd;
   char	*str, *tmp;
@@ -46,12 +46,23 @@ int	read_h(char *file)
   while ((str = get_next_line(fd)) != NULL)
     {
       tmp = rostring(str);
-      if (check_is_proto(tmp) == -1)
+      if (check_parenthesis(tmp) == 0)
 	{
-	  printf("on garde\n");
+	  if (strstr(tmp, ".c */") == NULL)
+	    alloc(core, tmp);
 	}
     }
-  printf("\n");
   return (1);
+}
 
+void    display_tableau(char **tab)
+{
+  int   i;
+
+  i = -1;
+  if (tab != NULL)
+    {
+      while (tab[++i] != NULL)
+	printf("%s\n", tab[i]);
+    }
 }
