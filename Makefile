@@ -5,13 +5,14 @@
 ## Login   <baptiste@epitech.net>
 ## 
 ## Started on  Wed May 11 17:39:05 2016 
-## Last update Mon May 16 10:49:23 2016 
+## Last update Mon May 16 10:52:51 2016 
 ##
 
 
 NAME	=	gen
 
-SRC	=	main.c
+SRC	=	main.c \
+		space.c 
 
 INC_DIR	=	include
 
