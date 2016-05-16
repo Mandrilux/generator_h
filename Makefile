@@ -5,7 +5,7 @@
 ## Login   <baptiste@epitech.net>
 ## 
 ## Started on  Wed May 11 17:39:05 2016 
-## Last update Mon May 16 11:04:56 2016 
+## Last update Mon May 16 11:28:15 2016 
 ##
 
 
@@ -13,7 +13,9 @@ NAME	=	gen
 
 SRC	=	main.c \
 		space.c \
-		init.c
+		init.c \
+		read.c \
+		get_line.c 
 
 INC_DIR	=	include
 

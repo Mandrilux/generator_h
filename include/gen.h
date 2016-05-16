@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:50:03 2016
-** Last update Mon May 16 11:18:22 2016 
+** Last update Mon May 16 11:31:59 2016 
 */
 
 #ifndef GEN_H_
@@ -15,6 +15,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include "get_next_line.h"
 
 #define	TYPE_F ".c"
 
