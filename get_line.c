@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:29:12 2016
-** Last update Mon May 16 11:29:47 2016 
+** Last update Mon May 16 11:33:41 2016 
 */
 
 #include "gen.h"
@@ -33,21 +33,6 @@ int		my_memset_len(char *s, char c, int size, int flag)
   return (0);
 }
 
-char		*my_strncpy(char *dest, char *src, int nb)
-{
-  int		i;
-
-  i = 0;
-  while (src[i] != '\0' && i < nb)
-    {
-      dest[i] = src[i];
-      i++;
-    }
-  if (!src[nb - 1])
-    dest[i] = '\0';
-  return (dest);
-}
-
 char		*m_realoc(char *s, int fillback, char *buff, int *start)
 {
   char		*line;
@@ -59,9 +44,9 @@ char		*m_realoc(char *s, int fillback, char *buff, int *start)
   if (line == NULL)
     return (NULL);
   my_memset_len(line, '\0', old_len + fillback + 1, 1);
-  s != 0 ? my_strncpy(line, s, old_len) : my_strncpy(line, "", old_len);
+  s != 0 ? strncpy(line, s, old_len) : strncpy(line, "", old_len);
   line[old_len + fillback] = '\0';
-  my_strncpy(line + old_len, buff + start[0], fillback);
+  strncpy(line + old_len, buff + start[0], fillback);
   start[0] = start[0] + fillback + 1;
    return (line);
 }
