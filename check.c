@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Mon May 16 13:10:56 2016 
+** Last update Mon May 16 13:26:44 2016 
 */
 
 #include "gen.h"
@@ -88,4 +88,13 @@ int	check_not_key_word(char *str)
   else
     flag = flag + 0;
   return (flag);
+}
+
+int     count_tab(char **tab)
+{
+  int   i;
+
+  i = -1;
+  while (tab[++i] != NULL);
+  return (i);
 }
