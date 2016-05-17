@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:48:51 2016
-** Last update Tue May 17 10:00:51 2016 
+** Last update Tue May 17 10:50:47 2016 
 */
 
 #include "gen.h"
@@ -28,7 +28,7 @@ int		main(int ac, char **av)
     return (EXIT_FAILURE);
   if (directory_open(core, &rep) == -1)
     return (EXIT_FAILURE);
-  display_directory(&rep);
+  display_directory(core, &rep);
   return (1);
 }
 
@@ -44,7 +44,7 @@ int		directory_open(t_core *core, DIR **rep)
     return (1);
 }
 
-int    display_directory(DIR **rep)
+int    display_directory(t_core *core, DIR **rep)
 {
   struct dirent *ent;
 
@@ -57,7 +57,7 @@ int    display_directory(DIR **rep)
 	      if (strcmp(&(ent->d_name[strlen(ent->d_name) - 2]), TYPE_F) == 0)
 		{
 		  /* printf("%s\n", ent->d_name); */
-		  read_file(ent->d_name);
+		  read_file(core, ent->d_name);
 		}
 	    }
 	}

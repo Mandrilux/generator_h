@@ -5,21 +5,28 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Tue May 17 10:35:13 2016 
+** Last update Tue May 17 11:00:23 2016 
 */
 
 #include "gen.h"
 
-int     read_file(char *file)
+int     read_file(t_core *core, char *file)
 {
-  int   fd;
+  int   fd, fdh;
   char	*str;
   char	*tmp;
   char	*file_ok;
 
   if ((file_ok =  get_name_file(file)) == NULL)
     return (-1);
-  printf("%s\n\n", file_ok);
+  if ((fdh = open(core->name_h, O_APPEND | O_WRONLY)) == -1)
+    {
+      perror(core->name_prog);
+      exit (0);
+    }
+  write(fdh, file_ok, strlen(file_ok));
+  write(fdh, "\n\n", strlen("\n\n"));
+  /* printf("%s\n\n", file_ok); */
   if ((fd = open(file, O_RDONLY)) == -1)
     return (-1);
   while ((str = get_next_line(fd)) != NULL)
@@ -29,10 +36,13 @@ int     read_file(char *file)
       if (check_is_proto(tmp) != -1)
 	{
 	  tmp = format_str(tmp);
-	  printf("%s\n", tmp);
+	  write(fdh, tmp, strlen(tmp));
+	  write(fdh, "\n", strlen("\n"));
+	  /* printf("%s\n", tmp); */
 	}
     }
-  printf("\n");
+  write(fdh, "\n", strlen("\n"));
+  /* printf("\n"); */
   return (1);
 }
 
@@ -56,7 +66,7 @@ int	read_h(t_core *core, char *file)
 	    alloc(core, tmp);
 	}
     }
-  printf("%d\n", last_line_ok(core->re_write));
+  core->nb_write = last_line_ok(core->re_write);
   return (1);
 }
 

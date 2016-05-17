@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:50:03 2016
-** Last update Tue May 17 10:40:46 2016 
+** Last update Tue May 17 10:51:05 2016 
 */
 
 #ifndef GEN_H_
@@ -41,7 +41,7 @@ char		*init_str_2(char *str);
 		/* main.c */
 
 int		directory_open(t_core *core, DIR **rep);
-int		display_directory(DIR **rep);
+int		display_directory(t_core *core, DIR **rep);
 
 		/* init.c */
 
@@ -49,7 +49,7 @@ t_core          *init_core(char *name, char *h);
 
 		/* read.c */
 
-int		read_file(char *file);
+int		read_file(t_core *core, char *file);
 int		read_h(t_core *core, char *file);
 
 		/* check.c */
