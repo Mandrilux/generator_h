@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:48:51 2016
-** Last update Tue May 17 19:23:41 2016 
+** Last update Tue May 17 19:55:07 2016 
 */
 
 #include "gen.h"
@@ -34,7 +34,7 @@ int		main(int ac, char **av)
     return (EXIT_FAILURE);
   display_directory(core, &rep);
   write_def_bottom(core);
-  delete_line_empty(core);
+  while_not_clean(core);
   printf("[+] Generation %s successful\n", core->name_h);
   return (1);
 }

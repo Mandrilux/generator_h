@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:53:42 2016
-** Last update Tue May 17 19:50:08 2016 
+** Last update Tue May 17 19:54:48 2016 
 */
 
 #include "gen.h"
@@ -44,6 +44,12 @@ char    *rostring(char *str)
   return (str_2);
 }
 
+int	while_not_clean(t_core *core)
+{
+  printf("[%d]\n", delete_line_empty(core));
+  return (0);
+}
+
 int	delete_line_empty(t_core *core)
 {
   char	*file, *line_read;
@@ -60,6 +66,7 @@ int	delete_line_empty(t_core *core)
       contenue = alloc(contenue, line_read);
       free(line_read);
     }
+
   len_tab = count_tab(contenue);
   while (contenue[++i] != NULL)
     {
@@ -68,10 +75,10 @@ int	delete_line_empty(t_core *core)
 	  if (i + 2 <= len_tab)
 	    {
 	      if (is_empty_elm2(contenue[i + 1]) == 1 && is_empty_elm2(contenue[i + 2]) == 1)
-		printf("%s [ligne %d]\n", contenue[i], i);
+		return (i);
 	    }
 	}
     }
   close(fd);
-  return (1);
+  return (0);
 }
