@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Mon May 16 20:48:31 2016 
+** Last update Tue May 17 10:39:23 2016 
 */
 
 #include "gen.h"
@@ -99,30 +99,33 @@ int	check_not_key_word(char *str)
 
 int     count_tab(char **tab)
 {
-  int   i;
+  int   i = -1;
 
-  i = -1;
+  if (tab == NULL)
+    return (0);
   while (tab[++i] != NULL);
   return (i);
 }
 
-/* int	last_line_ok(char **tab) */
-/* { */
-/*   int	len = count_tab(tab); */
-/*   int	tmp = len; */
-/*   int	i = -1; */
-/*   while (len - 1 > 0) */
-/*     { */
-/*       if (strstr(tab[len - 1], "endif") == NULL) */
-/* 	{ */
-/* 	  while (tab[len - 1][++i] != '\0') */
-/* 	    { */
-/* 	      if (tab[len - 1][i] != ' ') */
-/* 		return (len); */
-/* 	    } */
-/* 	} */
-/*       i = -1; */
-/*       len--; */
-/*     } */
-/*   return (0); */
-/* } */
+int	last_line_ok(char **tab)
+{
+  int	len = count_tab(tab);
+  int	i = -1;
+
+  if (len == 0)
+    return (0);
+  while (len - 1 > 0)
+    {
+      if (strstr(tab[len - 1], "endif") == NULL)
+	{
+	  while (tab[len - 1][++i] != '\0')
+	    {
+	      if (tab[len - 1][i] != ' ')
+		return (len);
+	    }
+	}
+      i = -1;
+      len--;
+    }
+  return (0);
+}
