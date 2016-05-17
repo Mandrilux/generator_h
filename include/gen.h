@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:50:03 2016
-** Last update Tue May 17 12:57:15 2016 
+** Last update Tue May 17 13:40:18 2016 
 */
 
 #ifndef GEN_H_
@@ -28,6 +28,7 @@ typedef struct  s_core
   char		*name_prog;
   char		**re_write;
   char		*name_h;
+  char		*name_h_maj;
   int		nb_write;
 }               t_core;
 
@@ -68,6 +69,8 @@ char		*get_name_file(char *name);
 int		alloc(t_core *core, char *name);
 char		*add_include(char *str);
 int		is_a_header_file(char *str);
+void		majuscule(char *chaine);
+char		*header_format(char *name);
 
 		/* strtoword.c */
 
@@ -80,5 +83,6 @@ char		**strtowordtab(char *str, char decoup);
 		/* write.c */
 
 int		write_def_top(t_core *core);
+int		write_def_bottom(t_core *core);
 
 #endif /* GEN_H_ */

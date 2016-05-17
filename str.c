@@ -4,8 +4,8 @@
 ** Made by
 ** Login   <baptiste@epitech.net>
 **
-** Started on  Mon May 16 13:11:00 2016
-** Last update Tue May 17 10:47:44 2016 
+** Started on  Tue May 17 13:22:04 2016
+** Last update Tue May 17 13:30:08 2016 
 */
 
 #include "gen.h"
@@ -94,4 +94,30 @@ char	*add_include(char *str)
   strcat(tmp, "include/");
   strcat(tmp, str);
   return (tmp);
+}
+
+char	*header_format(char *name)
+{
+  char	**cut;
+  int	count;
+
+  if ((cut = strtowordtab(name, '/')) == NULL)
+    return (NULL);
+  count = count_tab(cut);
+  if ((cut = strtowordtab(cut[count - 1], '.')) == NULL)
+    return (NULL);
+  majuscule(cut[0]);
+  return (cut[0]);
+}
+
+void majuscule(char *chaine)
+{
+  int i = 0;
+
+  while (chaine[i] != '\0')
+    {
+      if (chaine[i]  >= 97 && chaine[i] <= 122)
+	chaine[i] = chaine[i] - 32;
+      i++;
+    }
 }

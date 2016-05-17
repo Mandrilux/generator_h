@@ -1,3 +1,6 @@
+
+#ifndef MY_H_
+#define MY_H_
 		/* strtoword.c */
 
 int		 count_words(char *str, char decoup);
@@ -9,6 +12,7 @@ char		 **strtowordtab(char *str, char decoup);
 		/* write.c */
 
 int		 write_def_top(t_core *core);
+int		 write_def_bottom(t_core *core);
 
 		/* check.c */
 
@@ -35,6 +39,7 @@ t_core		 *init_core(char *name, char *h);
 char		 *get_name_file(char *name);
 int		 alloc(t_core *core, char *name);
 char		 *add_include(char *str);
+void		 majuscule(char *chaine);
 
 		/* get_line.c */
 
@@ -53,3 +58,5 @@ char		 *rostring(char *str);
 int		 main(int ac, char **av);
 int		 directory_open(t_core *core, DIR **rep);
 int		 display_directory(t_core *core, DIR **rep);
+
+#endif /* MY_H_ */
