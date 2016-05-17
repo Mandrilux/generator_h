@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Tue May 17 11:04:02 2016 
+** Last update Tue May 17 15:01:21 2016 
 */
 
 #include "gen.h"
@@ -26,7 +26,6 @@ int     read_file(t_core *core, char *file)
     }
   write(fdh, file_ok, strlen(file_ok));
   write(fdh, "\n\n", strlen("\n\n"));
-  /* printf("%s\n\n", file_ok); */
   if ((fd = open(file, O_RDONLY)) == -1)
     return (-1);
   while ((str = get_next_line(fd)) != NULL)
@@ -38,11 +37,9 @@ int     read_file(t_core *core, char *file)
 	  tmp = format_str(tmp);
 	  write(fdh, tmp, strlen(tmp));
 	  write(fdh, "\n", strlen("\n"));
-	  /* printf("%s\n", tmp); */
 	}
     }
   write(fdh, "\n", strlen("\n"));
-  /* printf("\n"); */
   return (1);
 }
 
@@ -63,8 +60,10 @@ int	read_h(t_core *core, char *file)
       if (check_parenthesis(tmp) == 0)
 	{
 	  if (strstr(tmp, ".c */") == NULL)
-	    alloc(core, tmp);
+	      alloc(core, tmp);
 	}
+      else if (strstr(tmp, "typedef") != NULL)
+	alloc(core, tmp);
     }
   core->nb_write = last_line_ok(core->re_write);
   return (1);

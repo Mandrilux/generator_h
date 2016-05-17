@@ -1,37 +1,6 @@
-/*
-** gen.h for in /home/baptiste/project/generator_h
-**
-** Made by
-** Login <baptiste@epitech.net>
-**
-** Started on Mon May 16 10:50:03 2016
-** Last update Tue May 17 14:25:02 2016
-*/
 
-#ifndef GEN_H_
-#define GEN_H_
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <dirent.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include "get_next_line.h"
-
-#define TYPE_F ".c"
-
-typedef struct s_core
-{
-char *name_prog;
-char **re_write;
-char *name_h;
-char *name_h_maj;
-int nb_write;
-} t_core;
-
+#ifndef MY_H_
+#define MY_H_
 		/* strtoword.c */
 
 int		 count_words(char *str, char decoup);
@@ -92,4 +61,4 @@ int		 main(int ac, char **av);
 int		 directory_open(t_core *core, DIR **rep);
 int		 display_directory(t_core *core, DIR **rep);
 
-#endif /* GEN_H_ */
+#endif /* MY_H_ */
