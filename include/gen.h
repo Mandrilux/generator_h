@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:50:03 2016
-** Last update Tue May 17 11:05:46 2016 
+** Last update Tue May 17 12:57:15 2016 
 */
 
 #ifndef GEN_H_
@@ -76,5 +76,9 @@ int		wordlen(char *str, char decoup);
 char		*complete_line(char *str, int nb, char decoup);
 char		**small_tab(char *str);
 char		**strtowordtab(char *str, char decoup);
+
+		/* write.c */
+
+int		write_def_top(t_core *core);
 
 #endif /* GEN_H_ */

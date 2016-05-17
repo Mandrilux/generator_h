@@ -6,6 +6,10 @@ char		 *complete_line(char *str, int nb, char decoup);
 char		 **small_tab(char *str);
 char		 **strtowordtab(char *str, char decoup);
 
+		/* write.c */
+
+int		 write_def_top(t_core *core);
+
 		/* check.c */
 
 int		 check_is_proto(char *str);
@@ -49,4 +53,3 @@ char		 *rostring(char *str);
 int		 main(int ac, char **av);
 int		 directory_open(t_core *core, DIR **rep);
 int		 display_directory(t_core *core, DIR **rep);
-

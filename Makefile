@@ -5,7 +5,7 @@
 ## Login   <baptiste@epitech.net>
 ## 
 ## Started on  Wed May 11 17:39:05 2016 
-## Last update Mon May 16 13:20:50 2016 
+## Last update Tue May 17 12:29:39 2016 
 ##
 
 
@@ -18,8 +18,8 @@ SRC	=	main.c \
 		get_line.c \
 		check.c \
 		str.c \
-		strtoword.c
-
+		strtoword.c \
+		write.c
 INC_DIR	=	include
 
 OBJ	=	$(SRC:.c=.o)

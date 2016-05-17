@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:48:51 2016
-** Last update Tue May 17 11:10:24 2016 
+** Last update Tue May 17 12:58:15 2016 
 */
 
 #include "gen.h"
@@ -28,6 +28,7 @@ int		main(int ac, char **av)
     return (printf("Error : R.A.M was attacked !\n"));
   if (read_h(core, core->name_h) == -1)
     return (EXIT_FAILURE);
+  write_def_top(core);
   if (directory_open(core, &rep) == -1)
     return (EXIT_FAILURE);
   display_directory(core, &rep);
