@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:50:03 2016
-** Last update Tue May 17 13:40:18 2016 
+** Last update Tue May 17 14:23:24 2016 
 */
 
 #ifndef GEN_H_
@@ -31,8 +31,6 @@ typedef struct  s_core
   char		*name_h_maj;
   int		nb_write;
 }               t_core;
-
-char		*strdup(const char *s);
 
 		/* space.c */
 
