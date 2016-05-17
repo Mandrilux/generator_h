@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Tue May 17 18:56:33 2016 
+** Last update Tue May 17 20:20:14 2016 
 */
 
 #include "gen.h"
@@ -70,7 +70,9 @@ int	check_not_key_word(char *str)
 {
   int	flag = 0;
 
-  if (strstr(str,"while") != NULL)
+  if (strstr(str,"while(") != NULL)
+    flag++;
+  else if (strstr(str,"while (") != NULL)
     flag++;
   else if (strstr(str,"if(") != NULL)
     flag++;

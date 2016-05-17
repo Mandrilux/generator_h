@@ -5,7 +5,7 @@
 ** Login <baptiste@epitech.net>
 **
 ** Started on Mon May 16 10:50:03 2016
-** Last update Tue May 17 19:54:33 2016 
+** Last update Tue May 17 19:54:33 2016
 */
 
 #ifndef GEN_H_
@@ -40,7 +40,7 @@ int nb_write;
 t_header *header;
 } t_core;
 
-char		*strdup(const char *s);
+char *strdup(const char *s);
 
 		/* strtoword.c */
 
@@ -100,8 +100,8 @@ void		 majuscule(char *chaine);
 
 char		 *init_str_2(char *str);
 char		 *rostring(char *str);
-int		delete_line_empty(t_core *core);
-int		while_not_clean(t_core *core);
+int		 while_not_clean(t_core *core);
+int		 delete_line_empty(t_core *core);
 
 		/* main.c */
 
