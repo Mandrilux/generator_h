@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:48:51 2016
-** Last update Mon May 16 20:58:03 2016 
+** Last update Tue May 17 10:00:51 2016 
 */
 
 #include "gen.h"
@@ -24,7 +24,8 @@ int		main(int ac, char **av)
     return (printf("RAM was attacked !\n"));
   if ((core = init_core(av[0], tmp)) == NULL)
     return (printf("RAM was attacked !\n"));
-  read_h(core, tmp);
+  if (read_h(core, core->name_h) == -1)
+    return (EXIT_FAILURE);
   if (directory_open(core, &rep) == -1)
     return (EXIT_FAILURE);
   display_directory(&rep);

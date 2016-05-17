@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Mon May 16 20:32:01 2016 
+** Last update Tue May 17 10:06:12 2016 
 */
 
 #include "gen.h"
@@ -41,8 +41,12 @@ int	read_h(t_core *core, char *file)
   int	fd;
   char	*str, *tmp;
 
-  if ((fd = open(file, O_RDONLY)) == -1)
-    return (-1);
+  /* if ((fd = open(file, O_RDONLY)) == -1) */
+  if ((fd = open(file, O_CREAT | O_RDONLY, 0777)) == -1)
+    {
+      perror(core->name_prog);
+      return (-1);
+    }
   while ((str = get_next_line(fd)) != NULL)
     {
       tmp = rostring(str);
