@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:03:55 2016
-** Last update Tue May 17 18:08:49 2016 
+** Last update Tue May 17 18:11:32 2016 
 */
 
 #include "gen.h"
@@ -33,6 +33,7 @@ int             add_last(t_header **header, int fd)
   if ((new_maillon = malloc(sizeof(t_header))) == NULL)
     return (-1);
   new_maillon->line = NULL;
+  new_maillon->nxt = NULL;
   while ((line_read = get_next_line(fd)) != NULL)
     {
       printf("%s\n",line_read);
