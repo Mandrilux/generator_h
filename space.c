@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:53:42 2016
-** Last update Tue May 17 19:48:11 2016 
+** Last update Tue May 17 19:50:08 2016 
 */
 
 #include "gen.h"
@@ -68,7 +68,7 @@ int	delete_line_empty(t_core *core)
 	  if (i + 2 <= len_tab)
 	    {
 	      if (is_empty_elm2(contenue[i + 1]) == 1 && is_empty_elm2(contenue[i + 2]) == 1)
-		printf("%s\n", contenue[i]);
+		printf("%s [ligne %d]\n", contenue[i], i);
 	    }
 	}
     }
