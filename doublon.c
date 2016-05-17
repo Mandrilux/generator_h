@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Tue May 17 15:06:18 2016
-** Last update Tue May 17 17:24:31 2016 
+** Last update Tue May 17 18:15:23 2016 
 */
 
 #include "gen.h"
@@ -33,7 +33,6 @@ int            open_include(t_core *core, DIR **rep)
 
 int    check_all_h(t_core *core, DIR **rep)
 {
-  int	flag = 0;
   struct dirent *ent;
   char	*name;
 
@@ -49,14 +48,13 @@ int    check_all_h(t_core *core, DIR **rep)
 		  if (strcmp(name, core->name_h) != 0)
 		    {
 		      read_to_h(core, name);
-		      printf("on open le .h %s\n", name);
 		    }
 		}
 	    }
 	}
       closedir(*rep);
     }
-  return (flag);
+  return (0);
 }
 
 int	read_to_h(t_core *core, char *name)
@@ -69,12 +67,5 @@ int	read_to_h(t_core *core, char *name)
       exit (0);
     }
   add_last(&(core->header),  fd);
-  /* while ((line_read = get_next_line(fd)) != NULL) */
-  /*   { */
-  /*     line_read = rostring(line_read); */
-
-  /*     free(line_read); */
-  /*   } */
-  /* close(fd); */
   return (0);
 }
