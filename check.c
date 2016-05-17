@@ -1,11 +1,11 @@
 /*
-** read.c for  in /home/baptiste/project/generator_h
+1;2802;0c** read.c for  in /home/baptiste/project/generator_h
 **
 ** Made by
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Tue May 17 15:32:06 2016 
+** Last update Tue May 17 18:32:20 2016 
 */
 
 #include "gen.h"
@@ -142,4 +142,26 @@ int     is_empty_elm2(char *str)
 	return (0);
     }
   return (1);
+}
+
+int	is_exist_already(t_core *core, char *str)
+{
+  t_header     *tmp;
+  int		i;
+
+  i = -1;
+  tmp = core->header;
+  while (tmp != NULL)
+    {
+      while(tmp->line[++i] != NULL)
+	{
+	  if (strcmp(str, tmp->line[i]) == 0)
+	    {
+	      return (1);
+	    }
+	}
+      i = -1;
+      tmp = tmp->nxt;
+    }
+  return (0);
 }

@@ -1,11 +1,11 @@
 /*
-1;2802;0c1;2802;0c1;2802;0c** read.c for  in /home/baptiste/project/generator_h
+1;2802;0c1;2802;0c1;2802;0c1;2802;0c1;2802;0c1;2802;0c1;2802;0c** read.c for  in /home/baptiste/project/generator_h
 **
 ** Made by
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Tue May 17 18:01:45 2016 
+** Last update Tue May 17 18:33:14 2016 
 */
 
 #include "gen.h"
@@ -35,8 +35,12 @@ int     read_file(t_core *core, char *file)
       if (check_is_proto(tmp) != -1)
 	{
 	  tmp = format_str(tmp);
-	  write(fdh, tmp, strlen(tmp));
-	  write(fdh, "\n", strlen("\n"));
+	  if (is_exist_already(core, rostring(tmp)) != 1)
+	    {
+	      printf("%s\n", tmp);
+	      write(fdh, tmp, strlen(tmp));
+	      write(fdh, "\n", strlen("\n"));
+	    }
 	}
     }
   write(fdh, "\n", strlen("\n"));

@@ -5,7 +5,7 @@
 ** Login <baptiste@epitech.net>
 **
 ** Started on Mon May 16 10:50:03 2016
-** Last update Tue May 17 18:03:05 2016 
+** Last update Tue May 17 18:25:31 2016 
 */
 
 #ifndef GEN_H_
@@ -63,6 +63,7 @@ int		 count_tab(char **tab);
 int		 last_line_ok(char **tab);
 int		 is_a_header_file(char *str);
 int		is_empty_elm2(char *str);
+int		is_exist_already(t_core *core, char *str);
 
 		/* read.c */
 
