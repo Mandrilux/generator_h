@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Tue May 17 11:05:26 2016 
+** Last update Tue May 17 14:21:04 2016 
 */
 
 #include "gen.h"
@@ -72,25 +72,19 @@ int	check_not_key_word(char *str)
 
   if (strstr(str,"while") != NULL)
     flag++;
-  else if (strstr(str,"if") != NULL)
+  else if (strstr(str,"if(") != NULL)
     flag++;
-  else if (strstr(str,"else") != NULL)
+  else if (strstr(str,"if (") != NULL)
+    flag++;
+  else if (strstr(str,"else(") != NULL)
+    flag++;
+  else if (strstr(str,"else (") != NULL)
     flag++;
   else if (strstr(str,"else if") != NULL)
     flag++;
-  else if (strstr(str,"for") != NULL)
+  else if (strstr(str,"for(") != NULL)
     flag++;
-  else if (strstr(str, "case") != NULL)
-    flag++;
-  else if (strstr(str, "default") != NULL)
-    flag++;
-  else if (strstr(str, "break") != NULL)
-    flag++;
-  else if (strstr(str, "define") != NULL)
-    flag++;
-  else if(strstr(str, "struct") != NULL)
-    flag++;
-  else if(strstr(str, "typedef") != NULL)
+  else if (strstr(str,"for (") != NULL)
     flag++;
   else
     flag = flag + 0;
