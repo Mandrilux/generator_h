@@ -1,11 +1,11 @@
 /*
-** space.c for  in /home/baptiste/project/generator_h
+1;2802;0c** space.c for  in /home/baptiste/project/generator_h
 **
 ** Made by
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:53:42 2016
-** Last update Mon May 16 10:54:24 2016 
+** Last update Tue May 17 19:48:11 2016 
 */
 
 #include "gen.h"
@@ -42,4 +42,36 @@ char    *rostring(char *str)
     }
   str_2[j] = '\0';
   return (str_2);
+}
+
+int	delete_line_empty(t_core *core)
+{
+  char	*file, *line_read;
+  char	**contenue;
+  int	i = -1, fd, len_tab;
+
+  contenue = NULL;
+  file = add_include(core->name_h);
+  if ((fd = open(file, O_RDONLY)) == -1)
+    return (-1);
+  while ((line_read = get_next_line(fd)) != NULL)
+    {
+      line_read = rostring(line_read);
+      contenue = alloc(contenue, line_read);
+      free(line_read);
+    }
+  len_tab = count_tab(contenue);
+  while (contenue[++i] != NULL)
+    {
+      if (strlen(contenue[i]) > 3 && strncmp(contenue[i], "/* ", 3) == 0)
+	{
+	  if (i + 2 <= len_tab)
+	    {
+	      if (is_empty_elm2(contenue[i + 1]) == 1 && is_empty_elm2(contenue[i + 2]) == 1)
+		printf("%s\n", contenue[i]);
+	    }
+	}
+    }
+  close(fd);
+  return (1);
 }

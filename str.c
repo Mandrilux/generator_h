@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Tue May 17 13:22:04 2016
-** Last update Tue May 17 18:01:01 2016 
+** Last update Tue May 17 19:20:56 2016 
 */
 
 #include "gen.h"
@@ -80,33 +80,6 @@ char	**alloc(char **re_write, char *name)
     }
   return (tmp);
 }
-
-/*  int     alloc(t_core *core, char *name) */
-/* { */
-/*   int   i; */
-/*   char  **tmp; */
-
-/*   i = -1; */
-/*   if (core->re_write == NULL) */
-/*     { */
-/*       if ((core->re_write = malloc(sizeof(char *) * 2)) == NULL) */
-/* 	return (-1); */
-/*       core->re_write[0] = strdup(name); */
-/*       core->re_write[1] = NULL; */
-/*     } */
-/*   else */
-/*     { */
-/*       if ((tmp = malloc(sizeof(char *) * */
-/* 			(count_tab(core->re_write) + 2))) == NULL) */
-/* 	return (-1); */
-/*       while (core->re_write[++i] != NULL) */
-/* 	tmp[i] = core->re_write[i]; */
-/*       tmp[i] = strdup(name); */
-/*       tmp[i + 1] = NULL; */
-/*       core->re_write = tmp; */
-/*     } */
-/*   return (1); */
-/* } */
 
 char	*add_include(char *str)
 {

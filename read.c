@@ -1,11 +1,11 @@
 /*
-1;2802;0c1;2802;0c1;2802;0c1;2802;0c1;2802;0c1;2802;0c1;2802;0c** read.c for  in /home/baptiste/project/generator_h
+** read.c for  in /home/baptiste/project/generator_h
 **
 ** Made by
 ** Login   <baptiste@epitech.net>
 **
-** Started on  Mon May 16 11:19:53 2016
-** Last update Tue May 17 18:33:14 2016 
+** Started on  Tue May 17 19:01:11 2016
+** Last update Tue May 17 19:08:02 2016 
 */
 
 #include "gen.h"
@@ -62,23 +62,13 @@ int	read_h(t_core *core, char *file)
       if (check_parenthesis(tmp) == 0)
 	{
 	  if (strstr(tmp, ".c */") == NULL)
-	      core->re_write = alloc(core->re_write, tmp);
+	    core->re_write = alloc(core->re_write, tmp);
 	}
       else if (strstr(tmp, "typedef") != NULL)
+	core->re_write = alloc(core->re_write, tmp);
+      else if (strstr(tmp, "strdup(") != NULL)
 	core->re_write = alloc(core->re_write, tmp);
     }
   core->nb_write = last_line_ok(core->re_write);
   return (1);
-}
-
-void    display_tableau(char **tab)
-{
-  int   i;
-
-  i = -1;
-  if (tab != NULL)
-    {
-      while (tab[++i] != NULL)
-	printf("%s\n", tab[i]);
-    }
 }

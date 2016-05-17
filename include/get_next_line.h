@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:31:25 2016
-** Last update Tue May 17 14:24:19 2016 
+** Last update Tue May 17 19:04:58 2016 
 */
 
 #ifndef _GETNEXTLINE_H_
@@ -15,7 +15,6 @@
 #define READ_SIZE (100)
 #endif
 
-char *strdup(const char *s);
 
 void    init(int *nb2, int *nb);
 char	*m_realoc(char *s, int fillback, char *buff, int *start);

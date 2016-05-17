@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:48:51 2016
-** Last update Tue May 17 18:25:53 2016 
+** Last update Tue May 17 19:23:41 2016 
 */
 
 #include "gen.h"
@@ -34,6 +34,7 @@ int		main(int ac, char **av)
     return (EXIT_FAILURE);
   display_directory(core, &rep);
   write_def_bottom(core);
+  delete_line_empty(core);
   printf("[+] Generation %s successful\n", core->name_h);
   return (1);
 }
@@ -61,10 +62,7 @@ int    display_directory(t_core *core, DIR **rep)
 	  if (strlen(ent->d_name) > 2)
 	    {
 	      if (strcmp(&(ent->d_name[strlen(ent->d_name) - 2]), TYPE_F) == 0)
-		{
-		  /* printf("%s\n", ent->d_name); */
-		  read_file(core, ent->d_name);
-		}
+		read_file(core, ent->d_name);
 	    }
 	}
       closedir(*rep);

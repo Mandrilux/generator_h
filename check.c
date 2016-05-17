@@ -1,11 +1,11 @@
 /*
-1;2802;0c** read.c for  in /home/baptiste/project/generator_h
+** read.c for  in /home/baptiste/project/generator_h
 **
 ** Made by
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Tue May 17 18:32:20 2016 
+** Last update Tue May 17 18:56:33 2016 
 */
 
 #include "gen.h"

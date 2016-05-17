@@ -29,6 +29,7 @@ int		 my_memset_len(char *s, char c, int size, int flag);
 
 		/* space.c */
 
+int		 delete_line_empty(t_core *core);
 
 		/* main.c */
 

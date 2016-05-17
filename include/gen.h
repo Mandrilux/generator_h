@@ -5,7 +5,7 @@
 ** Login <baptiste@epitech.net>
 **
 ** Started on Mon May 16 10:50:03 2016
-** Last update Tue May 17 18:25:31 2016 
+** Last update Tue May 17 19:08:43 2016 
 */
 
 #ifndef GEN_H_
@@ -24,21 +24,23 @@
 #define TYPE_F ".c"
 #define TYPE_H ".h"
 
-typedef struct	s_header
+typedef struct s_header
 {
-  char			**line;
-  struct s_header	*nxt;
-}			t_header;
+char **line;
+struct s_header *nxt;
+} t_header;
 
 typedef struct s_core
 {
-  char		*name_prog;
-  char		**re_write;
-  char		*name_h;
-  char		*name_h_maj;
-  int		nb_write;
-  t_header	*header;
+char *name_prog;
+char **re_write;
+char *name_h;
+char *name_h_maj;
+int nb_write;
+t_header *header;
 } t_core;
+
+char		*strdup(const char *s);
 
 		/* strtoword.c */
 
@@ -62,28 +64,37 @@ int		 check_not_key_word(char *str);
 int		 count_tab(char **tab);
 int		 last_line_ok(char **tab);
 int		 is_a_header_file(char *str);
-int		is_empty_elm2(char *str);
-int		is_exist_already(t_core *core, char *str);
+int		 is_empty_elm2(char *str);
+int		 is_exist_already(t_core *core, char *str);
 
 		/* read.c */
 
 int		 read_file(t_core *core, char *file);
 int		 read_h(t_core *core, char *file);
-void		 display_tableau(char **tab);
+
+		/* doublon.c */
+
+int		 init_all_h(t_core *core);
+int		 open_include(t_core *core, DIR **rep);
+int		 check_all_h(t_core *core, DIR **rep);
+int		 read_to_h(t_core *core, char *name);
 
 		/* init.c */
 
-t_core		*init_core(char *name, char *h);
-int		add_last(t_header **header, int fd);
+t_core		 *init_core(char *name, char *h);
+int		 add_last(t_header **header, int fd);
+
 		/* str.c */
 
 char		 *format_str(char *str);
 char		 *get_name_file(char *name);
-char    **alloc(char **re_write, char *name);
-
+char		 **alloc(char **re_write, char *name);
 char		 *add_include(char *str);
 char		 *header_format(char *name);
 void		 majuscule(char *chaine);
+
+		/* get_line.c */
+
 
 		/* space.c */
 
@@ -95,12 +106,5 @@ char		 *rostring(char *str);
 int		 main(int ac, char **av);
 int		 directory_open(t_core *core, DIR **rep);
 int		 display_directory(t_core *core, DIR **rep);
-
-		/*doublon.c */
-
-int		init_all_h(t_core *core);
-int		open_include(t_core *core, DIR **rep);
-int		check_all_h(t_core *core, DIR **rep);
-int		read_to_h(t_core *core, char *name);
 
 #endif /* GEN_H_ */
