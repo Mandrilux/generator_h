@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:03:55 2016
-** Last update Tue May 17 18:11:32 2016 
+** Last update Tue May 17 18:14:08 2016 
 */
 
 #include "gen.h"
@@ -36,9 +36,9 @@ int             add_last(t_header **header, int fd)
   new_maillon->nxt = NULL;
   while ((line_read = get_next_line(fd)) != NULL)
     {
-      printf("%s\n",line_read);
       line_read = rostring(line_read);
-      new_maillon->line = alloc(new_maillon->line, line_read);
+      if (is_empty_elm2(line_read) != 1)
+	new_maillon->line = alloc(new_maillon->line, line_read);
       free(line_read);
     }
   close(fd);
