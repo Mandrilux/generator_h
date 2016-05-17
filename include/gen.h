@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:50:03 2016
-** Last update Tue May 17 10:51:05 2016 
+** Last update Tue May 17 11:05:46 2016 
 */
 
 #ifndef GEN_H_
@@ -67,6 +67,7 @@ char		*format_str(char *str);
 char		*get_name_file(char *name);
 int		alloc(t_core *core, char *name);
 char		*add_include(char *str);
+int		is_a_header_file(char *str);
 
 		/* strtoword.c */
 

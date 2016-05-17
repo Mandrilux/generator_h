@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:48:51 2016
-** Last update Tue May 17 10:50:47 2016 
+** Last update Tue May 17 11:07:40 2016 
 */
 
 #include "gen.h"
@@ -20,10 +20,12 @@ int		main(int ac, char **av)
     tmp = strdup("my.h");
   else
     tmp = av[1];
+  if (is_a_header_file(tmp) == -1)
+    return (printf("Error : this file is not header file\n"));
   if ((tmp = add_include(tmp)) == NULL)
-    return (printf("RAM was attacked !\n"));
+    return (printf("Error : R.A.M was attacked !\n"));
   if ((core = init_core(av[0], tmp)) == NULL)
-    return (printf("RAM was attacked !\n"));
+    return (printf("Error : R.A.M was attacked !\n"));
   if (read_h(core, core->name_h) == -1)
     return (EXIT_FAILURE);
   if (directory_open(core, &rep) == -1)

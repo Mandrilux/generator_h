@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Tue May 17 10:39:23 2016 
+** Last update Tue May 17 11:05:26 2016 
 */
 
 #include "gen.h"
@@ -128,4 +128,12 @@ int	last_line_ok(char **tab)
       len--;
     }
   return (0);
+}
+
+int	is_a_header_file(char *str)
+{
+  if (strstr(str, ".h") == NULL)
+    return (-1);
+  else
+    return (1);
 }
