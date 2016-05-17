@@ -5,7 +5,7 @@
 ## Login   <baptiste@epitech.net>
 ## 
 ## Started on  Wed May 11 17:39:05 2016 
-## Last update Tue May 17 12:29:39 2016 
+## Last update Tue May 17 18:06:55 2016 
 ##
 
 
@@ -19,14 +19,15 @@ SRC	=	main.c \
 		check.c \
 		str.c \
 		strtoword.c \
-		write.c
+		write.c \
+		doublon.c 
 INC_DIR	=	include
 
 OBJ	=	$(SRC:.c=.o)
 
 CC	=	/usr/bin/gcc
 
-CFLAGS	=	-W -Wall -Wextra -ansi -pedantic
+CFLAGS	=	-W -Wall -Wextra -ansi -pedantic -g
 CFLAGS  +=      -I$(INC_DIR)
 
 RM	=	rm -f

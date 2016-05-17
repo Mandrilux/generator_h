@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Tue May 17 14:57:25 2016 
+** Last update Tue May 17 15:32:06 2016 
 */
 
 #include "gen.h"
@@ -130,4 +130,16 @@ int	is_a_header_file(char *str)
     return (-1);
   else
     return (1);
+}
+
+int     is_empty_elm2(char *str)
+{
+  int	i = -1;
+
+  while (str[++i] != '\0')
+    {
+      if (str[i] != '\n' && str[i] != ' ')
+	return (0);
+    }
+  return (1);
 }

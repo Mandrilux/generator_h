@@ -1,6 +1,7 @@
 
 #ifndef MY_H_
 #define MY_H_
+
 		/* strtoword.c */
 
 int		 count_words(char *str, char decoup);
@@ -23,6 +24,7 @@ int		 check_not_key_word(char *str);
 int		 count_tab(char **tab);
 int		 last_line_ok(char **tab);
 int		 is_a_header_file(char *str);
+int		 is_empty_elm2(char *str);
 
 		/* read.c */
 
@@ -30,15 +32,23 @@ int		 read_file(t_core *core, char *file);
 int		 read_h(t_core *core, char *file);
 void		 display_tableau(char **tab);
 
+		/* doublon.c */
+
+int		 init_all_h(t_core *core);
+int		 open_include(t_core *core, DIR **rep);
+int		 check_all_h(t_core *core, DIR **rep);
+int		 read_to_h(t_core *core, char *name);
+
 		/* init.c */
 
 t_core		 *init_core(char *name, char *h);
+int		 add_last(t_header **header, int fd);
 
 		/* str.c */
 
 char		 *format_str(char *str);
 char		 *get_name_file(char *name);
-int		 alloc(t_core *core, char *name);
+char		 **alloc(char **re_write, char *name);
 char		 *add_include(char *str);
 char		 *header_format(char *name);
 void		 majuscule(char *chaine);

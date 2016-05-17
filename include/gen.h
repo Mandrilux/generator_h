@@ -5,7 +5,7 @@
 ** Login <baptiste@epitech.net>
 **
 ** Started on Mon May 16 10:50:03 2016
-** Last update Tue May 17 14:25:02 2016
+** Last update Tue May 17 18:03:05 2016 
 */
 
 #ifndef GEN_H_
@@ -22,14 +22,22 @@
 #include "get_next_line.h"
 
 #define TYPE_F ".c"
+#define TYPE_H ".h"
+
+typedef struct	s_header
+{
+  char			**line;
+  struct s_header	*nxt;
+}			t_header;
 
 typedef struct s_core
 {
-char *name_prog;
-char **re_write;
-char *name_h;
-char *name_h_maj;
-int nb_write;
+  char		*name_prog;
+  char		**re_write;
+  char		*name_h;
+  char		*name_h_maj;
+  int		nb_write;
+  t_header	*header;
 } t_core;
 
 		/* strtoword.c */
@@ -54,6 +62,7 @@ int		 check_not_key_word(char *str);
 int		 count_tab(char **tab);
 int		 last_line_ok(char **tab);
 int		 is_a_header_file(char *str);
+int		is_empty_elm2(char *str);
 
 		/* read.c */
 
@@ -63,23 +72,17 @@ void		 display_tableau(char **tab);
 
 		/* init.c */
 
-t_core		 *init_core(char *name, char *h);
-
+t_core		*init_core(char *name, char *h);
+int		add_last(t_header **header, int fd);
 		/* str.c */
 
 char		 *format_str(char *str);
 char		 *get_name_file(char *name);
-int		 alloc(t_core *core, char *name);
+char    **alloc(char **re_write, char *name);
+
 char		 *add_include(char *str);
 char		 *header_format(char *name);
 void		 majuscule(char *chaine);
-
-		/* get_line.c */
-
-int		 my_memset_len(char *s, char c, int size, int flag);
-char		 *m_realoc(char *s, int fillback, char *buff, int *start);
-void		 init(int *nb2, int *nb);
-char		 *get_next_line(const int fd);
 
 		/* space.c */
 
@@ -91,5 +94,12 @@ char		 *rostring(char *str);
 int		 main(int ac, char **av);
 int		 directory_open(t_core *core, DIR **rep);
 int		 display_directory(t_core *core, DIR **rep);
+
+		/*doublon.c */
+
+int		init_all_h(t_core *core);
+int		open_include(t_core *core, DIR **rep);
+int		check_all_h(t_core *core, DIR **rep);
+int		read_to_h(t_core *core, char *name);
 
 #endif /* GEN_H_ */

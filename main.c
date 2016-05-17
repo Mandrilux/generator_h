@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:48:51 2016
-** Last update Tue May 17 13:40:54 2016 
+** Last update Tue May 17 18:02:22 2016 
 */
 
 #include "gen.h"
@@ -26,6 +26,7 @@ int		main(int ac, char **av)
     return (printf("Error : R.A.M was attacked !\n"));
   if ((core = init_core(av[0], tmp)) == NULL)
     return (printf("Error : R.A.M was attacked !\n"));
+  init_all_h(core);
   if (read_h(core, core->name_h) == -1)
     return (EXIT_FAILURE);
   write_def_top(core);

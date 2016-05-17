@@ -1,11 +1,11 @@
 /*
-** read.c for  in /home/baptiste/project/generator_h
+1;2802;0c1;2802;0c1;2802;0c** read.c for  in /home/baptiste/project/generator_h
 **
 ** Made by
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Tue May 17 15:01:21 2016 
+** Last update Tue May 17 18:01:45 2016 
 */
 
 #include "gen.h"
@@ -47,8 +47,6 @@ int	read_h(t_core *core, char *file)
 {
   int	fd;
   char	*str, *tmp;
-
-
   if ((fd = open(file, O_CREAT | O_RDONLY, 0777)) == -1)
     {
       perror(core->name_prog);
@@ -60,10 +58,10 @@ int	read_h(t_core *core, char *file)
       if (check_parenthesis(tmp) == 0)
 	{
 	  if (strstr(tmp, ".c */") == NULL)
-	      alloc(core, tmp);
+	      core->re_write = alloc(core->re_write, tmp);
 	}
       else if (strstr(tmp, "typedef") != NULL)
-	alloc(core, tmp);
+	core->re_write = alloc(core->re_write, tmp);
     }
   core->nb_write = last_line_ok(core->re_write);
   return (1);
