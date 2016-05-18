@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Tue May 17 19:01:11 2016
-** Last update Wed May 18 08:58:02 2016 
+** Last update Wed May 18 09:00:42 2016 
 */
 
 #include "gen.h"
@@ -26,8 +26,6 @@ int     read_file(t_core *core, char *file)
       perror(core->name_prog);
       exit (0);
     }
-  /* write(fdh, file_ok, strlen(file_ok)); */
-  /* write(fdh, "\n\n", strlen("\n\n")); */
   if ((fd = open(file, O_RDONLY)) == -1)
     return (-1);
   while ((str = get_next_line(fd)) != NULL)
@@ -41,8 +39,6 @@ int     read_file(t_core *core, char *file)
 	    {
 	      printf("%s\n", tmp);
 	      data = alloc(data, tmp);
-	      /* write(fdh, tmp, strlen(tmp)); */
-	      /* write(fdh, "\n", strlen("\n")); */
 	    }
 	}
     }
@@ -57,7 +53,6 @@ int     read_file(t_core *core, char *file)
 	}
       write(fdh, "\n", strlen("\n"));
     }
-  /* write(fdh, "\n", strlen("\n")); */
   return (1);
 }
 

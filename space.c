@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:53:42 2016
-** Last update Tue May 17 20:47:40 2016 
+** Last update Wed May 18 09:02:25 2016 
 */
 
 #include "gen.h"
@@ -42,65 +42,4 @@ char    *rostring(char *str)
     }
   str_2[j] = '\0';
   return (str_2);
-}
-
-int	while_not_clean(t_core *core)
-{
-  delete_line_empty(core);
-  return (0);
-}
-
-int	delete_line_empty(t_core *core)
-{
-  char	*file, *line_read;
-  char	**contenue;
-  int	i = -1, fd, len_tab, flag = 0, cut = 0;
-
-  contenue = NULL;
-  file = add_include(core->name_h);
-  if ((fd = open(file, O_RDONLY)) == -1)
-    return (-1);
-  while ((line_read = get_next_line(fd)) != NULL)
-    {
-      line_read = rostring(line_read);
-      contenue = alloc(contenue, line_read);
-      free(line_read);
-    }
-
-  len_tab = count_tab(contenue);
-  while (contenue[++i] != NULL)
-    {
-      if (strlen(contenue[i]) > 3 && strncmp(contenue[i], "/* ", 3) == 0)
-	{
-	  if (i + 2 <= len_tab)
-	    {
-	      if (is_empty_elm2(contenue[i + 1]) == 1 && is_empty_elm2(contenue[i + 2]) == 1)
-		{
-		  flag = 1;
-		  cut = i;
-		}
-	    }
-	}
-    }
-  close(fd);
-  if ((fd = open(file, O_TRUNC | O_WRONLY)) == -1)
-    {
-      printf("Erreur lors du nettoyage du fichier\n");
-      exit (0);
-    }
-  /* i = -1; */
-  /* while (++i < cut) */
-  /*   { */
-  /*     printf("%s\n", contenue[i]); */
-  /*     write(fd, contenue[i], strlen(contenue[i])); */
-  /*     write(fd, "\n", strlen("\n")); */
-  /*   } */
-  /* printf("\n"); */
-  /* i = cut + 1; */
-  /* while (++i  < count_tab(contenue)) */
-  /*   { */
-  /*     write(fd, contenue[i], strlen(contenue[i])); */
-  /*     write(fd, "\n", strlen("\n")); */
-  /*   } */
-  return (flag);
 }

@@ -5,7 +5,7 @@
 ## Login   <baptiste@epitech.net>
 ## 
 ## Started on  Wed May 11 17:39:05 2016 
-## Last update Tue May 17 18:14:27 2016 
+## Last update Wed May 18 09:01:27 2016 
 ##
 
 
@@ -20,7 +20,9 @@ SRC	=	main.c \
 		str.c \
 		strtoword.c \
 		write.c \
-		doublon.c 
+		doublon.c \
+		free.c
+
 INC_DIR	=	include
 
 OBJ	=	$(SRC:.c=.o)
