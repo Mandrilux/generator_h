@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:03:55 2016
-** Last update Tue May 17 18:14:08 2016 
+** Last update Wed May 18 09:22:47 2016 
 */
 
 #include "gen.h"
@@ -19,6 +19,7 @@ t_core		*init_core(char *name, char *h)
   tmp->name_h = h;
   tmp->name_prog = name;
   tmp->re_write = NULL;
+  tmp->name_h_maj = NULL;
   tmp->header = NULL;
   return (tmp);
 }

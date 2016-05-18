@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:48:51 2016
-** Last update Wed May 18 09:02:12 2016 
+** Last update Wed May 18 09:21:20 2016 
 */
 
 #include "gen.h"
@@ -17,7 +17,7 @@ int		main(int ac, char **av)
   char		*tmp;
 
   if (ac == 1)
-    tmp = strdup("my.h");
+    tmp = strdup(NAME_DEFAULT);
   else
     tmp = av[1];
   if (is_a_header_file(tmp) == -1)
@@ -35,7 +35,8 @@ int		main(int ac, char **av)
   display_directory(core, &rep);
   write_def_bottom(core);
   printf("[+] Generation %s successful\n", core->name_h);
-  return (1);
+  free_all(core);
+  return (EXIT_SUCCESS);
 }
 
 int		directory_open(t_core *core, DIR **rep)

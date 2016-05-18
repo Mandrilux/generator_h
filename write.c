@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Tue May 17 12:51:38 2016
-** Last update Tue May 17 18:02:09 2016 
+** Last update Wed May 18 09:11:03 2016 
 */
 
 #include "gen.h"
@@ -34,7 +34,7 @@ int	write_def_top(t_core *core)
   else
     {
       write(fdh, "\n", strlen("\n"));
-      if ((tmp = malloc(sizeof(char) * (11 + strlen(core->name_h_maj)))) == NULL)
+      if ((tmp = malloc(sizeof(char) * (13 + strlen(core->name_h_maj)))) == NULL)
 	{
 	  perror(core->name_prog);
 	  exit (0);

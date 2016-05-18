@@ -5,7 +5,7 @@
 ** Login <baptiste@epitech.net>
 **
 ** Started on Mon May 16 10:50:03 2016
-** Last update Tue May 17 19:54:33 2016
+** Last update Wed May 18 09:18:57 2016 
 */
 
 #ifndef GEN_H_
@@ -23,6 +23,7 @@
 
 #define TYPE_F ".c"
 #define TYPE_H ".h"
+#define NAME_DEFAULT "my.h"
 
 typedef struct s_header
 {
@@ -59,6 +60,7 @@ int		 write_def_bottom(t_core *core);
 
 int		 free_tab(char **tab);
 int		 free_two_tab(char **tab1, char **tab2);
+int		 free_all(t_core *core);
 
 		/* check.c */
 
