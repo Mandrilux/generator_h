@@ -55,6 +55,11 @@ char		 **strtowordtab(char *str, char decoup);
 int		 write_def_top(t_core *core);
 int		 write_def_bottom(t_core *core);
 
+		/* free.c */
+
+int		 free_tab(char **tab);
+int		 free_two_tab(char **tab1, char **tab2);
+
 		/* check.c */
 
 int		 check_is_proto(char *str);
@@ -95,13 +100,12 @@ void		 majuscule(char *chaine);
 
 		/* get_line.c */
 
+int		 my_memset_len(char *s, char c, int size, int flag);
 
 		/* space.c */
 
 char		 *init_str_2(char *str);
 char		 *rostring(char *str);
-int		 while_not_clean(t_core *core);
-int		 delete_line_empty(t_core *core);
 
 		/* main.c */
 

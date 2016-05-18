@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Tue May 17 19:01:11 2016
-** Last update Wed May 18 09:00:42 2016 
+** Last update Wed May 18 09:03:35 2016 
 */
 
 #include "gen.h"
@@ -52,6 +52,7 @@ int     read_file(t_core *core, char *file)
 	  write(fdh, "\n", strlen("\n"));
 	}
       write(fdh, "\n", strlen("\n"));
+      free_tab(data);
     }
   return (1);
 }
