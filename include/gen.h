@@ -5,7 +5,7 @@
 ** Login <baptiste@epitech.net>
 **
 ** Started on Mon May 16 10:50:03 2016
-** Last update Wed May 18 09:18:57 2016 
+** Last update Wed May 18 11:04:01 2016 
 */
 
 #ifndef GEN_H_
@@ -27,21 +27,21 @@
 
 typedef struct s_header
 {
-char **line;
+char		**line;
 struct s_header *nxt;
-} t_header;
+}		t_header;
 
-typedef struct s_core
+typedef struct	s_core
 {
-char *name_prog;
-char **re_write;
-char *name_h;
-char *name_h_maj;
-int nb_write;
-t_header *header;
+char		*name_prog;
+char		**re_write;
+char		*name_h;
+char		*name_h_maj;
+int		nb_write;
+t_header	*header;
 } t_core;
 
-char *strdup(const char *s);
+char		*strdup(const char *s);
 
 		/* strtoword.c */
 

@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Tue May 17 19:01:11 2016
-** Last update Wed May 18 09:03:35 2016 
+** Last update Wed May 18 11:03:34 2016 
 */
 
 #include "gen.h"
@@ -72,12 +72,12 @@ int	read_h(t_core *core, char *file)
       if (check_parenthesis(tmp) == 0)
 	{
 	  if (strstr(tmp, ".c */") == NULL)
-	    core->re_write = alloc(core->re_write, tmp);
+	    core->re_write = alloc(core->re_write, str);
 	}
       else if (strstr(tmp, "typedef") != NULL)
-	core->re_write = alloc(core->re_write, tmp);
+	core->re_write = alloc(core->re_write, str);
       else if (strstr(tmp, "strdup(") != NULL)
-	core->re_write = alloc(core->re_write, tmp);
+	core->re_write = alloc(core->re_write, str);
     }
   core->nb_write = last_line_ok(core->re_write);
   return (1);

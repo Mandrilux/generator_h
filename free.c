@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Fri May 13 22:16:55 2016
-** Last update Wed May 18 09:26:53 2016 
+** Last update Wed May 18 11:00:15 2016 
 */
 
 #include "gen.h"
@@ -36,8 +36,8 @@ int	free_all(t_core *core)
     {
       if (core->re_write != NULL)
 	free_tab(core->re_write);
-      if (core->name_h != NULL)
-	free(core->name_h);
+      /* if (core->name_h != NULL) */
+      /* 	free(core->name_h); */
       if (core->name_h_maj != NULL)
 	free(core->name_h_maj);
       if (core->header != NULL)
