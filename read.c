@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Tue May 17 19:01:11 2016
-** Last update Tue May 17 19:08:02 2016 
+** Last update Wed May 18 08:58:02 2016 
 */
 
 #include "gen.h"
@@ -16,6 +16,8 @@ int     read_file(t_core *core, char *file)
   char	*str;
   char	*tmp;
   char	*file_ok;
+  char	**data = NULL;
+  int	i = -1;
 
   if ((file_ok =  get_name_file(file)) == NULL)
     return (-1);
@@ -24,8 +26,8 @@ int     read_file(t_core *core, char *file)
       perror(core->name_prog);
       exit (0);
     }
-  write(fdh, file_ok, strlen(file_ok));
-  write(fdh, "\n\n", strlen("\n\n"));
+  /* write(fdh, file_ok, strlen(file_ok)); */
+  /* write(fdh, "\n\n", strlen("\n\n")); */
   if ((fd = open(file, O_RDONLY)) == -1)
     return (-1);
   while ((str = get_next_line(fd)) != NULL)
@@ -38,12 +40,24 @@ int     read_file(t_core *core, char *file)
 	  if (is_exist_already(core, rostring(tmp)) != 1)
 	    {
 	      printf("%s\n", tmp);
-	      write(fdh, tmp, strlen(tmp));
-	      write(fdh, "\n", strlen("\n"));
+	      data = alloc(data, tmp);
+	      /* write(fdh, tmp, strlen(tmp)); */
+	      /* write(fdh, "\n", strlen("\n")); */
 	    }
 	}
     }
-  write(fdh, "\n", strlen("\n"));
+  if (data != NULL)
+    {
+      write(fdh, file_ok, strlen(file_ok));
+      write(fdh, "\n\n", strlen("\n\n"));
+      while (data[++i] != NULL)
+	{
+	  write(fdh, data[i], strlen(data[i]));
+	  write(fdh, "\n", strlen("\n"));
+	}
+      write(fdh, "\n", strlen("\n"));
+    }
+  /* write(fdh, "\n", strlen("\n")); */
   return (1);
 }
 

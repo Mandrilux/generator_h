@@ -1,0 +1,8 @@
+
+/* get_line.c */
+
+int my_memset_len(char *s, char c, int size, int flag);
+
+
+
+#endif /* MY_H_ */
