@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Tue May 17 15:06:18 2016
-** Last update Tue May 17 18:15:23 2016 
+** Last update Sun Mar  5 08:39:25 2017 
 */
 
 #include "gen.h"
@@ -46,9 +46,7 @@ int    check_all_h(t_core *core, DIR **rep)
 		{
 		  name = add_include(ent->d_name);
 		  if (strcmp(name, core->name_h) != 0)
-		    {
-		      read_to_h(core, name);
-		    }
+		    read_to_h(core, name);
 		}
 	    }
 	}

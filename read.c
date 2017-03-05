@@ -5,10 +5,12 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Tue May 17 19:01:11 2016
-** Last update Wed May 18 11:03:34 2016 
+** Last update Sun Mar  5 08:54:46 2017 
 */
 
 #include "gen.h"
+
+/* Fonction qui permet lit dans le fichier et ajoute dans le .h */
 
 int     read_file(t_core *core, char *file)
 {
@@ -31,14 +33,19 @@ int     read_file(t_core *core, char *file)
   while ((str = get_next_line(fd)) != NULL)
     {
       tmp = rostring(str);
+
       free(str);
       if (check_is_proto(tmp) != -1)
 	{
-	  tmp = format_str(tmp);
-	  if (is_exist_already(core, rostring(tmp)) != 1)
+	  /* on n'ajoute pas le prototype de la fonction main() */
+	  if (strstr(tmp, "main (") == NULL && strstr(tmp, "main(") == NULL)
 	    {
-	      printf("%s\n", tmp);
-	      data = alloc(data, tmp);
+	      tmp = format_str(tmp);
+	      if (is_exist_already(core, rostring(tmp)) != 1)
+		{
+		  printf("%s\n", tmp);
+		  data = alloc(data, tmp);
+		}
 	    }
 	}
     }

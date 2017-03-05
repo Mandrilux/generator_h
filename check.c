@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Tue May 17 20:20:14 2016 
+** Last update Sun Mar  5 08:32:49 2017 
 */
 
 #include "gen.h"
@@ -158,9 +158,7 @@ int	is_exist_already(t_core *core, char *str)
       while(tmp->line[++i] != NULL)
 	{
 	  if (strcmp(str, tmp->line[i]) == 0)
-	    {
 	      return (1);
-	    }
 	}
       i = -1;
       tmp = tmp->nxt;
