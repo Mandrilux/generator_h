@@ -1,13 +1,3 @@
-##
-## Makefile for  in /home/baptiste/rendu/CPE_colle_semaine3
-## 
-## Made by 
-## Login   <baptiste@epitech.net>
-## 
-## Started on  Wed May 11 17:39:05 2016 
-## Last update Wed May 18 11:03:50 2016 
-##
-
 
 NAME	=	gen
 
@@ -30,6 +20,7 @@ OBJ	=	$(SRC:.c=.o)
 CC	=	/usr/bin/gcc
 
 CFLAGS	=	-W -Wall -Wextra -ansi -pedantic
+
 CFLAGS  +=      -I$(INC_DIR)
 
 RM	=	rm -f
