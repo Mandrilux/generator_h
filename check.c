@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:19:53 2016
-** Last update Sun Mar  5 08:32:49 2017 
+** Last update Wed Jun  7 11:11:15 2017 
 */
 
 #include "gen.h"
@@ -20,7 +20,11 @@ int	check_is_proto(char *str)
       if (is_no_op(str) != -1)
 	{
 	  if (check_not_key_word(str) == 0)
-	    return (1);
+	    {
+	      if (strncasecmp(str, "static ", 7) == 0)
+		  return (-1);
+	      return (1);
+	    }
 	  else
 	    return (-1);
 	}

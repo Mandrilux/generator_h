@@ -5,7 +5,7 @@
 ** Login <baptiste@epitech.net>
 **
 ** Started on Mon May 16 10:50:03 2016
-** Last update Sun Mar  5 08:48:01 2017 
+** Last update Wed Jun  7 11:10:47 2017 
 */
 
 #ifndef GEN_H_
@@ -42,7 +42,7 @@ t_header	*header;
 } t_core;
 
 char		*strdup(const char *s);
-
+int strncasecmp(const char *s1, const char *s2, size_t n);
 		/* strtoword.c */
 
 int		 count_words(char *str, char decoup);
